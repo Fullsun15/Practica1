@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$mensajeRegistro = ''; // Inicializamos el mensaje como una cadena vacía
+$mensajeRegistro = ''; 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!isset($_SESSION['empleados'])) {
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'sueldo' => $_POST['sueldo'],
         ];
 
-        // Almacenar el empleado en un array de empleados
+        
         $_SESSION['empleados'][] = $empleado;
 
         $mensajeRegistro = 'Empleado registrado exitosamente.';
@@ -51,7 +51,7 @@ function calcularEdadPromedioHombres($empleados) {
         }
     }
 
-    // Calcular la edad promedio solo si hay hombres registrados
+   
     $edadPromedioHombres = ($totalHombres > 0) ? ($totalEdad / $totalHombres) : 0;
 
     return $edadPromedioHombres;
